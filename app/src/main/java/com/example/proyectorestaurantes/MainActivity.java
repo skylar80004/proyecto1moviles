@@ -101,6 +101,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void OnClickTest(View view){
+
+
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
+
      public void signIn() {
 
         Toast.makeText(this,"Goooogle",Toast.LENGTH_LONG).show();
