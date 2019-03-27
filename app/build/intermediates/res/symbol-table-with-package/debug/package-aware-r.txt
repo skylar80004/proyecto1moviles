@@ -1210,6 +1210,8 @@ id box_count
 id button
 id button2
 id buttonPanel
+id buttonSearchByName
+id buttonSeeMap
 id cancel_action
 id cancel_button
 id center
@@ -1251,6 +1253,7 @@ id direct
 id disableHome
 id display_always
 id drawer_layout
+id editText
 id edit_query
 id end
 id end_padder
@@ -1259,7 +1262,6 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
-id fab
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1292,6 +1294,7 @@ id light
 id line1
 id line3
 id listMode
+id listViewRestaurantes
 id list_item
 id login_button
 id map

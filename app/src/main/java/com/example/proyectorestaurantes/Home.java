@@ -1,5 +1,6 @@
 package com.example.proyectorestaurantes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -23,6 +28,8 @@ public class Home extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +38,7 @@ public class Home extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+        */
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,6 +48,9 @@ public class Home extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        this.TestListView();
     }
 
     @Override
@@ -97,5 +108,33 @@ public class Home extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+
+    public void OnClickButtonSeeMap(View view){
+
+        Intent intent = new Intent(this, MenuMapsActivity.class);
+        startActivity(intent);
+
+
+    }
+    public void TestListView(){
+
+        ListView listView = findViewById(R.id.listViewRestaurantes);
+        final ArrayList<String> elements = new ArrayList<String>();
+        elements.add("McDonalds");
+        elements.add("Il Volpino");
+        elements.add("Dominos Pizza");
+        elements.add("Monster Pizza");
+        elements.add("The Draft");
+        elements.add("Burger King");
+        elements.add("Chante Bike Club");
+        elements.add("Ches Toronjas");
+
+        ArrayAdapter<String> itemsAdapter =
+                new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1
+                        ,elements);
+        listView.setAdapter(itemsAdapter);
     }
 }
