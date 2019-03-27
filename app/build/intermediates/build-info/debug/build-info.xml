@@ -6,7 +6,7 @@
     density="420dpi"
     format="10"
     plugin-version="3.3.2"
-    timestamp="1553656421406"
+    timestamp="1553662364640"
     token="1951454906527984552"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -25,9 +25,6 @@
 
     <artifact
         location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
         type="SPLIT" />
 
     <build
@@ -76,22 +73,49 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1553656114760"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1553660052814"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
         <artifact
             location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1553656421406"
+        timestamp="1553662364640"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-            type="SPLIT" />
-        <artifact
-            location="D:\Tec\ISemestre2019\DesarrollodeAplicacionesMoviles\Proyectos\proyecto1\proyecto1moviles\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
     </build>
 

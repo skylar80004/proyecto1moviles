@@ -1,4 +1,4 @@
-#Tue Mar 26 20:48:00 CST 2019
+#Tue Mar 26 22:14:48 CST 2019
 base.0=D\:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
 path.0=classes.dex
 renamed.0=classes.dex
