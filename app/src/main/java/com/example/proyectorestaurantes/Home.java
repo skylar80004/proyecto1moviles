@@ -91,6 +91,17 @@ public class Home extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+
+        if (id == R.id.menuItemAgregar) {
+
+            Intent intent = new Intent(this, AddRestaurant.class);
+            startActivity(intent);
+
+        }
+        else if(id == R.id.menuItemBusqueda){
+
+        }
+        /*
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
@@ -104,6 +115,7 @@ public class Home extends AppCompatActivity
         } else if (id == R.id.nav_send) {
 
         }
+        */
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -111,14 +123,6 @@ public class Home extends AppCompatActivity
     }
 
 
-
-    public void OnClickButtonSeeMap(View view){
-
-        Intent intent = new Intent(this, MenuMapsActivity.class);
-        startActivity(intent);
-
-
-    }
     public void TestListView(){
 
         ListView listView = findViewById(R.id.listViewRestaurantes);
@@ -137,4 +141,26 @@ public class Home extends AppCompatActivity
                         ,elements);
         listView.setAdapter(itemsAdapter);
     }
+
+    // Buttons
+    public void OnClickButtonSeeMap(View view){
+
+        Intent intent = new Intent(this, MenuMapsActivity.class);
+        startActivity(intent);
+
+    }
+
+
+    public void OnClickButtonAddRest(View view){
+
+        Intent intent = new Intent(this, AddRestaurant.class);
+        startActivity(intent);
+    }
+
+    public void OnClickButtonAdvancedSearch(View view){
+
+    }
+
+
+
 }

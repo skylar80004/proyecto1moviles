@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Mar 26 22:55:51 CST 2019
+#Wed Mar 27 17:00:45 CST 2019
 0.baseType=DIRECTORY
 0.base=D\:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 0.path=classes.dex
