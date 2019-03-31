@@ -63,6 +63,7 @@ attr alertDialogButtonGroupStyle
 attr alertDialogCenterButtons
 attr alertDialogStyle
 attr alertDialogTheme
+attr alignmentMode
 attr allowStacking
 attr alpha
 attr alphabeticModifiers
@@ -182,6 +183,8 @@ attr colorPrimaryDark
 attr colorScheme
 attr colorSecondary
 attr colorSwitchThumbNormal
+attr columnCount
+attr columnOrderPreserved
 attr com_facebook_auxiliary_view_position
 attr com_facebook_confirm_logout
 attr com_facebook_foreground_color
@@ -334,6 +337,9 @@ attr layout_anchorGravity
 attr layout_behavior
 attr layout_collapseMode
 attr layout_collapseParallaxMultiplier
+attr layout_column
+attr layout_columnSpan
+attr layout_columnWeight
 attr layout_constrainedHeight
 attr layout_constrainedWidth
 attr layout_constraintBaseline_creator
@@ -384,9 +390,13 @@ attr layout_goneMarginLeft
 attr layout_goneMarginRight
 attr layout_goneMarginStart
 attr layout_goneMarginTop
+attr layout_gravity
 attr layout_insetEdge
 attr layout_keyline
 attr layout_optimizationLevel
+attr layout_row
+attr layout_rowSpan
+attr layout_rowWeight
 attr layout_scrollFlags
 attr layout_scrollInterpolator
 attr liftOnScroll
@@ -433,6 +443,7 @@ attr navigationIcon
 attr navigationMode
 attr navigationViewStyle
 attr numericModifiers
+attr orientation
 attr overlapAnchor
 attr paddingBottomNoButtons
 attr paddingEnd
@@ -461,6 +472,8 @@ attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
 attr reverseLayout
 attr rippleColor
+attr rowCount
+attr rowOrderPreserved
 attr scopeUris
 attr scrimAnimationDuration
 attr scrimBackground
@@ -601,6 +614,7 @@ attr uiTiltGestures
 attr uiZoomControls
 attr uiZoomGestures
 attr useCompatPadding
+attr useDefaultMargins
 attr useViewLifecycle
 attr viewInflaterClass
 attr voiceIcon
@@ -881,6 +895,7 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
+dimen default_gap
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
 dimen design_bottom_navigation_active_item_min_width
@@ -1419,6 +1434,8 @@ id add
 id adjust_height
 id adjust_width
 id alertTitle
+id alignBounds
+id alignMargins
 id all
 id always
 id async
@@ -1476,11 +1493,25 @@ id disableHome
 id display_always
 id drawer_layout
 id editText
+id editTextDomingoAbre
+id editTextDomingoCierra
+id editTextJuevesAbre
+id editTextJuevesCierra
+id editTextLunesAbre
+id editTextLunesCierra
+id editTextMartesAbre
+id editTextMartesCierra
+id editTextMiercolesCierra
+id editTextMiercolesbre
 id editTextNombreRest
+id editTextSabadoAbre
+id editTextSabadoCierra
 id editTextSitioWeb
 id editTextTelefono
 id editTextTipoComida
 id editTextTipoPrecio
+id editTextViernesAbre
+id editTextViernesCierra
 id edit_query
 id end
 id end_padder
@@ -1497,16 +1528,20 @@ id fixed
 id forever
 id ghost_view
 id gone
+id gridLayoutHorario
 id group_divider
 id groups
 id home
 id homeAsUp
+id horizontal
+id horizontalScrollImages
 id hybrid
 id icon
 id icon_group
 id icon_only
 id ifRoom
 id image
+id imageViewLogo
 id info
 id inline
 id invisible
@@ -1668,13 +1703,23 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textViewAbre
 id textViewAgregar
+id textViewCierra
+id textViewDomingo
 id textViewHorario
+id textViewJueves
+id textViewLunes
+id textViewMartes
+id textViewMiercoles
 id textViewNombreRest
+id textViewOpcional
+id textViewSabado
 id textViewSitioWeb
 id textViewTelefono
 id textViewTipoComida
 id textViewTipoPrecio
+id textViewViernes
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1697,6 +1742,7 @@ id unknown
 id unlabeled
 id up
 id useLogo
+id vertical
 id view_offset_helper
 id visible
 id volume_item_container
@@ -2524,6 +2570,8 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
+styleable GridLayout alignmentMode columnCount columnOrderPreserved orientation rowCount rowOrderPreserved useDefaultMargins
+styleable GridLayout_Layout android_layout_width android_layout_height android_layout_margin android_layout_marginLeft android_layout_marginTop android_layout_marginRight android_layout_marginBottom layout_column layout_columnSpan layout_columnWeight layout_gravity layout_row layout_rowSpan layout_rowWeight
 styleable LinearConstraintLayout android_orientation
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
