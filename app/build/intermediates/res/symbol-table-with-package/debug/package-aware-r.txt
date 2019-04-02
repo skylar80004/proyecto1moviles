@@ -1448,9 +1448,13 @@ id bottom
 id box_count
 id button
 id button2
+id buttonAgregarFinalizar
+id buttonAgregarImagen
+id buttonAgregarLogo
 id buttonPanel
 id buttonSearchByName
 id buttonSeeMap
+id buttonSiguiente
 id cancel_action
 id cancel_button
 id center
@@ -1534,14 +1538,14 @@ id groups
 id home
 id homeAsUp
 id horizontal
-id horizontalScrollImages
+id horizontalScrollView
 id hybrid
 id icon
 id icon_group
 id icon_only
 id ifRoom
 id image
-id imageViewLogo
+id imageView
 id info
 id inline
 id invisible
@@ -1550,6 +1554,7 @@ id item_touch_helper_previous_elevation
 id labeled
 id large
 id largeLabel
+id layoutHorizontalScroll
 id left
 id light
 id line1
@@ -1713,7 +1718,7 @@ id textViewLunes
 id textViewMartes
 id textViewMiercoles
 id textViewNombreRest
-id textViewOpcional
+id textViewOAgregarRestaurante2
 id textViewSabado
 id textViewSitioWeb
 id textViewTelefono
@@ -1805,6 +1810,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_restaurant
+layout activity_add_restaurant_next
 layout activity_home
 layout activity_main
 layout activity_menu_maps

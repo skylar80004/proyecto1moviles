@@ -452,6 +452,10 @@
         "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\3f03d011442f47e9428f2d49e0ea7741\\res\\drawable-xxxhdpi-v4\\ic_group_collapse_09.png"
     },
     {
+        "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_add_restaurant_next.xml.flat",
+        "source": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\src\\main\\res\\layout\\activity_add_restaurant_next.xml"
+    },
+    {
         "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_fade_in.xml.flat",
         "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\9e66692dbe49038e834dea5266d50d0a\\res\\anim\\abc_fade_in.xml"
     },

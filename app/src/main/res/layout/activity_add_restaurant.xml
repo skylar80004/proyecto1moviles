@@ -524,62 +524,27 @@
         </android.support.v7.widget.GridLayout>
 
 
-        <TextView
-            android:id="@+id/textViewOpcional"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/buttonSiguiente"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+
             android:layout_marginEnd="8dp"
-
-            android:text="Opcional:"
-            android:textColor="#111111"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gridLayoutHorario" />
-
-        <ImageView
-            android:id="@+id/imageViewLogo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="64dp"
-
             android:layout_marginBottom="8dp"
-            android:src="@color/colorAccent"
-            android:text="Opcional:"
-            android:textColor="#111111"
-            android:textSize="18sp"
+            android:background="@color/colorPrimary"
+            android:onClick="OnClickButtonSiguiente"
+
+            android:text="Siguiente"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/horizontalScrollImages"
+            app:layout_constraintEnd_toEndOf="parent"
 
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewOpcional" />
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/horizontalScrollImages"
-            app:layout_constraintStart_toEndOf="@id/imageViewLogo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewOpcional"
-            app:layout_constraintBottom_toBottomOf="parent"
-
-            >
-
-            <TextView android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:scrollHorizontally="true"
-                android:gravity="center|right"
-                android:text="123456789"/>
-
-        </HorizontalScrollView>
-
-
+            app:layout_constraintTop_toBottomOf="@id/gridLayoutHorario"
+            app:layout_constraintVertical_bias="0.0" />
 
 
 
