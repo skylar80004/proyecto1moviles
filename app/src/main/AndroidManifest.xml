@@ -8,7 +8,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +17,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddRestaurantNext"></activity>
+        <activity android:name=".Rate"></activity>
+        <activity android:name=".Comments" />
+        <activity android:name=".CheckSchedule" />
+        <activity android:name=".DetailRestaurant" />
+        <activity android:name=".AdvancedSearch" />
+        <activity android:name=".AddRestaurantNext" />
         <activity android:name=".AddRestaurant" />
         <activity
             android:name=".Home"

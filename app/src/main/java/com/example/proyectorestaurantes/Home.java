@@ -100,6 +100,9 @@ public class Home extends AppCompatActivity
         }
         else if(id == R.id.menuItemBusqueda){
 
+            Intent intent = new Intent(this, DetailRestaurant.class);
+            startActivity(intent);
+
         }
         /*
         if (id == R.id.nav_camera) {
@@ -147,17 +150,6 @@ public class Home extends AppCompatActivity
 
         Intent intent = new Intent(this, MenuMapsActivity.class);
         startActivity(intent);
-
-    }
-
-
-    public void OnClickButtonAddRest(View view){
-
-        Intent intent = new Intent(this, AddRestaurant.class);
-        startActivity(intent);
-    }
-
-    public void OnClickButtonAdvancedSearch(View view){
 
     }
 

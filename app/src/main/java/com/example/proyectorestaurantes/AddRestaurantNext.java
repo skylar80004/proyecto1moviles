@@ -19,6 +19,7 @@ public class AddRestaurantNext extends AppCompatActivity {
 
 
     private int GALLERY_REQUEST = 100;
+    private int LOGO_REQUEST = 105;
 
 
 
@@ -36,6 +37,14 @@ public class AddRestaurantNext extends AppCompatActivity {
 
     }
 
+
+    public void OnClickButtonAgregarLogo(View view){
+
+        Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+        photoPickerIntent.setType("image/*");
+        startActivityForResult(photoPickerIntent,this.LOGO_REQUEST);
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -50,9 +59,9 @@ public class AddRestaurantNext extends AppCompatActivity {
 
 
                     ImageView imageView = new ImageView(this);
-                    imageView.setLayoutParams(new android.view.ViewGroup.LayoutParams(500,500));
-                    imageView.setMaxHeight(500);
-                    imageView.setMaxWidth(500);
+                    imageView.setLayoutParams(new android.view.ViewGroup.LayoutParams(50,50));
+                    imageView.setMaxHeight(50);
+                    imageView.setMaxWidth(50);
                     imageView.setImageBitmap(bitmap);
 
                     LinearLayout linearLayout = findViewById(R.id.layoutHorizontalScroll);
@@ -62,6 +71,27 @@ public class AddRestaurantNext extends AppCompatActivity {
                 } catch (IOException e) {
                     Log.i("TAG", "Some exception " + e);
                 }
+
+            }
+            else if(requestCode == this.LOGO_REQUEST){
+
+                Uri selectedImage = data.getData();
+                try {
+
+                    // Set resized bit map
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
+                    ImageView imageView = findViewById(R.id.imageViewLogo);
+                    imageView.setImageBitmap(bitmap);
+                    //Bitmap bitmapResized = Bitmap.createScaledBitmap(bitmap,50,50,false);
+                    //ImageView imageViewLogo = findViewById(R.id.imageViewLogo);
+                    //imageViewLogo.setImageBitmap(bitmap);
+
+
+
+                } catch (IOException e) {
+                    Log.i("CHES", "Some exception " + e);
+                }
+
 
 
             }

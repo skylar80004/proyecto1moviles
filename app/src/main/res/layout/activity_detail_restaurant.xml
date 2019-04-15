@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailRestaurant">
+
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
+        android:background="#111111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonUbicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#111111"
+        android:text="Ubicación"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewLocation"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/ic_ubi2"
+        app:layout_constraintEnd_toStartOf="@+id/buttonUbicacion"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageViewLogo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewRateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Calificación:"
+        android:textColor="#111111"
+        app:layout_constraintStart_toStartOf="@+id/imageViewLocation"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLocation" />
+
+    <TextView
+        android:id="@+id/textViewRatePoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="4.3"
+        android:textColor="#111111"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toEndOf="@+id/textViewRateTitle"
+        app:layout_constraintTop_toBottomOf="@+id/buttonUbicacion" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
+        android:layout_width="0dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewName">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/imageViewDataBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@color/colorGrey" />
+
+    <ImageView
+        android:id="@+id/imageViewComments"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/imageViewAddPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAddPhoto"
+        app:srcCompat="@color/colorPrimary" />
+
+    <Button
+        android:id="@+id/buttonComments"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#111111"
+        android:onClick="OnClickButtonComments"
+        android:text="Comentarios"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDataBackground"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toEndOf="@+id/imageViewComments"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddPhoto" />
+
+    <ImageView
+        android:id="@+id/imageViewAddPhoto"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/imageViewSchedule"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewSchedule"
+        app:srcCompat="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/imageViewSchedule"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/imageViewRate"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewRate"
+        app:srcCompat="@color/colorPrimary" />
+
+    <Button
+        android:id="@+id/buttonSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#111111"
+        android:onClick="OnClickButtonSchedule"
+        android:text="Horario"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDataBackground"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageViewSchedule"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRate" />
+
+    <Button
+        android:id="@+id/buttonAddPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#111111"
+        android:text="Agregar foto"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDataBackground"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toEndOf="@+id/imageViewAddPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSchedule" />
+
+    <ImageView
+        android:id="@+id/imageViewTipoPrecio"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/imageViewDataBackground"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewTipoComida"
+        app:srcCompat="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/imageViewTipoComida"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/imageViewDataBackground"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewWeb"
+        app:srcCompat="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/textViewTipoComida"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Comida Rápida"
+        android:textColor="#111111"
+        app:layout_constraintStart_toEndOf="@+id/imageViewTipoComida"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWeb" />
+
+    <TextView
+        android:id="@+id/textViewTipoPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="Precio Medio"
+        android:textColor="#111111"
+        app:layout_constraintStart_toEndOf="@+id/imageViewTipoPrecio"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWeb" />
+
+    <ImageView
+        android:id="@+id/imageViewRate"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewPhone"
+        app:layout_constraintTop_toTopOf="@+id/imageViewDataBackground"
+        app:srcCompat="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/textViewPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="2553-0973"
+        android:textColor="#111111"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPhone"
+        app:layout_constraintTop_toTopOf="@+id/imageViewDataBackground" />
+
+    <ImageView
+        android:id="@+id/imageViewPhone"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/imageViewDataBackground"
+        app:layout_constraintTop_toTopOf="@+id/imageViewDataBackground"
+        app:srcCompat="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/imageViewWeb"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/imageViewDataBackground"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPhone"
+        app:srcCompat="@color/colorPrimary" />
+
+    <Button
+        android:id="@+id/buttonRate"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#111111"
+        android:onClick="OnClickButtonRate"
+        android:text="Calificar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDataBackground"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageViewRate"
+        app:layout_constraintTop_toTopOf="@+id/imageViewDataBackground" />
+
+    <TextView
+        android:id="@+id/textViewWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="pagina.com"
+        android:textColor="#111111"
+        app:layout_constraintStart_toEndOf="@+id/imageViewWeb"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPhone" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="McDonalds Cartago"
+        android:textAlignment="center"
+        android:textColor="#111111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />
+
+    <ImageView
+        android:id="@+id/imageViewBackGroundPop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:srcCompat="@color/colorPrimary"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="511dp" />
+
+
+
+</android.support.constraint.ConstraintLayout>

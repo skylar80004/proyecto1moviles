@@ -34,6 +34,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.proyectorestaurantes.Rate" />
+        <activity android:name="com.example.proyectorestaurantes.Comments" />
+        <activity android:name="com.example.proyectorestaurantes.CheckSchedule" />
+        <activity android:name="com.example.proyectorestaurantes.DetailRestaurant" />
+        <activity android:name="com.example.proyectorestaurantes.AdvancedSearch" />
         <activity android:name="com.example.proyectorestaurantes.AddRestaurantNext" />
         <activity android:name="com.example.proyectorestaurantes.AddRestaurant" />
         <activity

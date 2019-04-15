@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckSchedule">
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/gridLayoutHorario2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:columnCount="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rowCount="3">
+
+        <TextView
+            android:id="@+id/textViewHorario2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Horario:"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="1"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/textViewAbre2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Abre:"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+
+        <TextView
+            android:id="@+id/textViewCierra2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Cierra:"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/textViewLunes2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="L:"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <EditText
+            android:id="@+id/editTextLunesAbre2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+        <EditText
+            android:id="@+id/editTextLunesCierra2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+
+        <TextView
+            android:id="@+id/textViewMartes2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="K:"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <EditText
+            android:id="@+id/editTextMartesAbre2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+        <EditText
+            android:id="@+id/editTextMartesCierra2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/textViewMiercoles2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="M:"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <EditText
+            android:id="@+id/editTextMiercolesbre2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+        <EditText
+            android:id="@+id/editTextMiercolesCierra2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+
+        <TextView
+            android:id="@+id/textViewJueves2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="J:"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <EditText
+            android:id="@+id/editTextJuevesAbre2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+        <EditText
+            android:id="@+id/editTextJuevesCierra2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/textViewViernes2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="V:"
+            android:textColor="#111111"
+            android:textSize="18sp"
+
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <EditText
+            android:id="@+id/editTextViernesAbre2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+        <EditText
+            android:id="@+id/editTextViernesCierra2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/textViewSabado2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="S:"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <EditText
+            android:id="@+id/editTextSabadoAbre2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+        <EditText
+            android:id="@+id/editTextSabadoCierra2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+
+        <TextView
+            android:id="@+id/textViewDomingo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="D:"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+
+        <EditText
+            android:id="@+id/editTextDomingoAbre2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+        <EditText
+            android:id="@+id/editTextDomingoCierra2"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="time"
+            android:text="4:00"
+            android:textColor="#111111"
+
+            android:textSize="14sp"
+            app:layout_columnWeight="1"
+
+            app:layout_rowWeight="1" />
+
+
+    </android.support.v7.widget.GridLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>
