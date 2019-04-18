@@ -54,13 +54,16 @@ public class MainActivity extends AppCompatActivity {
                     public void onSuccess(LoginResult loginResult) {
                         // App code
 
-                        Toast toast = Toast.makeText(getApplicationContext(), "Logeado", Toast.LENGTH_LONG);
-                        toast.show();
+                        Intent intent = new Intent(getApplicationContext(),Home.class);
+                        startActivity(intent);
 
                     }
 
                     @Override
                     public void onCancel() {
+
+                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(intent);
                         // App code
                     }
 
@@ -168,6 +171,9 @@ public class MainActivity extends AppCompatActivity {
     private void updateUI(GoogleSignInAccount account){
 
         //  Sing in succesfull
+
+        Intent intent = new Intent(getApplicationContext(),Home.class);
+        startActivity(intent);
 
     }
 

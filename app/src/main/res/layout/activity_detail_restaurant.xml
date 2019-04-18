@@ -24,6 +24,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="#111111"
+        android:onClick="OnClickButtonLocation"
         android:text="Ubicación"
         android:textColor="#ffffff"
         android:textSize="14sp"
@@ -80,9 +81,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewName">
 
         <LinearLayout
+            android:id="@+id/linearLayoutDetailPhotos"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal" />
+            android:orientation="horizontal"
+            android:gravity="start"/>
     </HorizontalScrollView>
 
     <ImageView
@@ -167,6 +172,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="#111111"
+        android:onClick="OnClickButtonAddPhoto"
         android:text="Agregar foto"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/imageViewDataBackground"

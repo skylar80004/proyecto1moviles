@@ -1348,16 +1348,16 @@
         "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\9e66692dbe49038e834dea5266d50d0a\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
+        "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_rate.xml.flat",
+        "source": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\src\\main\\res\\layout\\activity_rate.xml"
+    },
+    {
         "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_01_dark.png.flat",
         "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\3f03d011442f47e9428f2d49e0ea7741\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_01_dark.png"
     },
     {
         "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_chip_text_color.xml.flat",
         "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\5a69bd43ca26f6c647b0cd5fc7c78233\\res\\color\\mtrl_chip_text_color.xml"
-    },
-    {
-        "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_rate.xml.flat",
-        "source": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\src\\main\\res\\layout\\activity_rate.xml"
     },
     {
         "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_transformation_sheet_expand_spec.xml.flat",
@@ -2132,16 +2132,16 @@
         "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\9e66692dbe49038e834dea5266d50d0a\\res\\drawable\\tooltip_frame_light.xml"
     },
     {
+        "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_comments.xml.flat",
+        "source": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\src\\main\\res\\layout\\activity_comments.xml"
+    },
+    {
         "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_03_light.png.flat",
         "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\3f03d011442f47e9428f2d49e0ea7741\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_03_light.png"
     },
     {
         "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_06_light.png.flat",
         "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\3f03d011442f47e9428f2d49e0ea7741\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_06_light.png"
-    },
-    {
-        "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_comments.xml.flat",
-        "source": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\src\\main\\res\\layout\\activity_comments.xml"
     },
     {
         "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action.xml.flat",
@@ -2356,12 +2356,12 @@
         "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\3f03d011442f47e9428f2d49e0ea7741\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_03_light.png"
     },
     {
-        "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_switch_track.xml.flat",
-        "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\9e66692dbe49038e834dea5266d50d0a\\res\\color\\abc_tint_switch_track.xml"
-    },
-    {
         "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_check_schedule.xml.flat",
         "source": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\src\\main\\res\\layout\\activity_check_schedule.xml"
+    },
+    {
+        "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_switch_track.xml.flat",
+        "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\9e66692dbe49038e834dea5266d50d0a\\res\\color\\abc_tint_switch_track.xml"
     },
     {
         "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_light.xml.flat",
@@ -3468,16 +3468,16 @@
         "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\3f03d011442f47e9428f2d49e0ea7741\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_13_light.png"
     },
     {
+        "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_ubi2.png.flat",
+        "source": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_ubi2.png"
+    },
+    {
         "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_09_dark.png.flat",
         "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\3f03d011442f47e9428f2d49e0ea7741\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_09_dark.png"
     },
     {
         "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connected_28_dark.png.flat",
         "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-28.0.0.aar\\3f03d011442f47e9428f2d49e0ea7741\\res\\drawable-xxhdpi-v4\\ic_mr_button_connected_28_dark.png"
-    },
-    {
-        "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_ubi2.png.flat",
-        "source": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_ubi2.png"
     },
     {
         "merged": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",

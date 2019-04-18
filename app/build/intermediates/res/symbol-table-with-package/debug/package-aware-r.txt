@@ -26,6 +26,7 @@ animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array rateItems
+array spinnerBusquedaTipoPrecio
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -1456,6 +1457,10 @@ id buttonAgregarFinalizar
 id buttonAgregarImagen
 id buttonAgregarLogo
 id buttonApplyRate
+id buttonBusquedaEstrella
+id buttonBusquedaKilometros
+id buttonBusquedaTipoComida
+id buttonBusquedaTipoPrecio
 id buttonComments
 id buttonMakeComment
 id buttonPanel
@@ -1506,7 +1511,8 @@ id direct
 id disableHome
 id display_always
 id drawer_layout
-id editText
+id editTextBusquedaKilometros
+id editTextBusquedaTipoComida
 id editTextDomingoAbre
 id editTextDomingoAbre2
 id editTextDomingoCierra
@@ -1532,9 +1538,9 @@ id editTextSabadoAbre
 id editTextSabadoAbre2
 id editTextSabadoCierra
 id editTextSabadoCierra2
+id editTextSearch
 id editTextSitioWeb
 id editTextTelefono
-id editTextTipoComida
 id editTextTipoPrecio
 id editTextUserComment
 id editTextViernesAbre
@@ -1599,6 +1605,7 @@ id light
 id line1
 id line3
 id linearLayoutComments
+id linearLayoutDetailPhotos
 id listMode
 id listViewRestaurantes
 id list_item
@@ -1727,6 +1734,8 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id spinnerBusquedaEstrellas
+id spinnerBusquedaTipoPrecio
 id spinnerRate
 id split_action_bar
 id spread
@@ -1771,6 +1780,8 @@ id textViewName
 id textViewNombreRest
 id textViewOAgregarRestaurante2
 id textViewPhone
+id textViewPrecioBusqueda
+id textViewPrecioBusqueda2
 id textViewRatePoints
 id textViewRateTitle
 id textViewSabado
@@ -1779,7 +1790,9 @@ id textViewSelectRate
 id textViewSitioWeb
 id textViewTelefono
 id textViewTipoComida
+id textViewTipoComidaBusqueda
 id textViewTipoPrecio
+id textViewTitleAdvancedSearch
 id textViewTypeComment
 id textViewViernes
 id textViewViernes2

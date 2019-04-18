@@ -13,13 +13,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class Home extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,17 +30,6 @@ public class Home extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -51,6 +42,10 @@ public class Home extends AppCompatActivity
 
 
         this.TestListView();
+
+        // Set Listener to ListView
+        ListView listView  = findViewById(R.id.listViewRestaurantes);
+        listView.setOnItemClickListener(this);
     }
 
     @Override
@@ -100,25 +95,10 @@ public class Home extends AppCompatActivity
         }
         else if(id == R.id.menuItemBusqueda){
 
-            Intent intent = new Intent(this, DetailRestaurant.class);
+            Intent intent = new Intent(this,AdvancedSearch.class);
             startActivity(intent);
-
         }
-        /*
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-        */
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -126,6 +106,8 @@ public class Home extends AppCompatActivity
     }
 
 
+
+    // Prueba de como llenar el list View
     public void TestListView(){
 
         ListView listView = findViewById(R.id.listViewRestaurantes);
@@ -153,6 +135,19 @@ public class Home extends AppCompatActivity
 
     }
 
+    public void OnClickButtonSearch(View view){
+
+        EditText editTextSearch = findViewById(R.id.editTextSearch);
+        String nombreRestauranteBuscado = editTextSearch.getText().toString();
+
+    }
 
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        Intent intent = new Intent(this,DetailRestaurant.class);
+        startActivity(intent);
+
+    }
 }

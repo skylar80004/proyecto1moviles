@@ -21,7 +21,7 @@ public class AddRestaurant extends AppCompatActivity {
         String inputs[] = new String[10];
 
         EditText editTextNombre = findViewById(R.id.editTextNombreRest);
-        EditText editTextTipoComida = findViewById(R.id.editTextTipoComida);
+        EditText editTextTipoComida = findViewById(R.id.editTextBusquedaTipoComida);
         EditText editTextSitioWeb = findViewById(R.id.editTextSitioWeb);
         EditText editTextTipoPrecio = findViewById(R.id.editTextTipoPrecio);
         EditText editTextTelefono = findViewById(R.id.editTextTelefono);
