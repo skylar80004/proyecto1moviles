@@ -146,7 +146,10 @@ public class Home extends AppCompatActivity
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+
+        String nombreRestaurante = (String)parent.getItemAtPosition(position);
         Intent intent = new Intent(this,DetailRestaurant.class);
+        intent.putExtra("nombreRestaurante",nombreRestaurante);
         startActivity(intent);
 
     }

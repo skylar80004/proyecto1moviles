@@ -1470,6 +1470,7 @@ id buttonSearchByName
 id buttonSeeMap
 id buttonSiguiente
 id buttonUbicacion
+id buttonVerDetalleMapPopUp
 id cancel_action
 id cancel_button
 id center
@@ -1777,6 +1778,7 @@ id textViewMartes2
 id textViewMiercoles
 id textViewMiercoles2
 id textViewName
+id textViewNameMapPopUp
 id textViewNombreRest
 id textViewOAgregarRestaurante2
 id textViewPhone
@@ -1889,6 +1891,7 @@ layout activity_comments
 layout activity_detail_restaurant
 layout activity_home
 layout activity_main
+layout activity_map_pop_up
 layout activity_menu_maps
 layout activity_rate
 layout app_bar_home

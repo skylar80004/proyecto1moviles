@@ -30,6 +30,11 @@ public class DetailRestaurant extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_restaurant);
 
+        Intent intent = getIntent();
+        String nombreRestaurante = intent.getStringExtra("nombreRestaurante");
+        TextView textViewNombreRestaurante = findViewById(R.id.textViewName);
+        textViewNombreRestaurante.setText(nombreRestaurante);
+
 
         ImageView imageViewUbication = findViewById(R.id.imageViewLocation);
        //mageViewUbication.setImageResource(R.drawable.ic_ubi2);
