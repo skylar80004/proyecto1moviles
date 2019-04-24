@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,17 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class AddRestaurantNext extends AppCompatActivity {
@@ -20,14 +32,19 @@ public class AddRestaurantNext extends AppCompatActivity {
 
     private int GALLERY_REQUEST = 100;
     private int LOGO_REQUEST = 105;
-
+    private StorageReference mStorageRef;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_restaurant_next);
+        FirebaseApp.initializeApp(this);
+        mStorageRef = FirebaseStorage.getInstance().getReference();
     }
+
+
+
 
     public void OnClickButtonAgregarImagen(View view){
 
@@ -36,6 +53,51 @@ public class AddRestaurantNext extends AppCompatActivity {
         startActivityForResult(photoPickerIntent, GALLERY_REQUEST);
 
     }
+
+    public void UploadImageToFireBase(String name,Bitmap bitmap){
+
+        final StorageReference mountaisRef = this.mStorageRef.child("name");
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG,100,baos);
+        byte[] data = baos.toByteArray();
+        UploadTask uploadTask = mountaisRef.putBytes(data);
+
+        Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+            @Override
+            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                if (!task.isSuccessful()) {
+                    throw task.getException();
+                }
+
+                // Continue with the task to get the download URL
+                return mountaisRef.getDownloadUrl();
+            }
+        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+            @Override
+            public void onComplete(@NonNull Task<Uri> task) {
+                if (task.isSuccessful()) {
+                    Uri downloadUri = task.getResult();
+                    Log.i("CHES","SE SUBIO LA IMAGEN Y SE OVTUBO EL LINK");
+                } else {
+                    // Handle failures
+                    // ...
+                }
+            }
+        });
+
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+            }
+        });
+    }
+
 
 
     public void OnClickButtonAgregarLogo(View view){
@@ -66,6 +128,8 @@ public class AddRestaurantNext extends AppCompatActivity {
 
                     LinearLayout linearLayout = findViewById(R.id.layoutHorizontalScroll);
                     linearLayout.addView(imageView);
+
+                    this.UploadImageToFireBase(selectedImage.getPath(),bitmap);
 
 
                 } catch (IOException e) {

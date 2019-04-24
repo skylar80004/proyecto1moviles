@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,11 +19,20 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
 
+
+
+    private Conexion conexion;
+    final ArrayList<String> elements = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,12 +50,19 @@ public class Home extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-        this.TestListView();
+        this.GetRestaurants();
 
         // Set Listener to ListView
         ListView listView  = findViewById(R.id.listViewRestaurantes);
         listView.setOnItemClickListener(this);
+
+        ArrayAdapter<String> itemsAdapter =
+                new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1
+                        ,elements);
+        listView.setAdapter(itemsAdapter);
+
+
+
     }
 
     @Override
@@ -105,9 +122,46 @@ public class Home extends AppCompatActivity
         return true;
     }
 
+    public void GetRestaurants(){
+
+        JSONObject jsonParam = new JSONObject();
+        String tipo = "GET";
+        String dir = "https://proyecto1moviles.herokuapp.com/restaurants.json";
+        //String dir = "https://proyecto1moviles.herokuapp.com/restaurants.json?search=%22Pizza%20hut%22";
+        Conexion conexion;
+        conexion = new Conexion();
+        try {
 
 
-    // Prueba de como llenar el list View
+            String resultado = conexion.execute(dir, tipo, jsonParam.toString()).get();
+            JSONArray marcas = new JSONArray(resultado);
+
+
+
+            for(int i = 0 ; i< marcas.length();i++){
+
+                String valor = marcas.getString(i);
+                JSONObject marca = new JSONObject(valor);
+
+                String nombre = marca.getString("name");
+                this.elements.add(nombre);
+                Log.i("CHES",nombre);
+            }
+
+
+
+
+
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+    }
     public void TestListView(){
 
         ListView listView = findViewById(R.id.listViewRestaurantes);
@@ -135,10 +189,53 @@ public class Home extends AppCompatActivity
 
     }
 
+
+    public void BusquedaPorNombre(String name ){
+
+        JSONObject params = new JSONObject();
+        String tipo = "GET";
+
+        name.replace(" ", "%20");
+        String dir2 = "https://proyecto1moviles.herokuapp.com/restaurants.json?search=%22" + name + "%22";
+
+        Conexion conexion;
+        conexion = new Conexion();
+
+        this.elements.clear();
+
+        try {
+            String resultado = conexion.execute(dir2, tipo, params.toString()).get();
+            JSONArray marcas = new JSONArray(resultado);
+
+            for(int i = 0; i < marcas.length();i++){
+                String datosRest = marcas.getString(i);
+                JSONObject registroRest = new JSONObject(datosRest);
+
+                String nombreRest = registroRest.getString("name");
+                this.elements.add(nombreRest);
+            }
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void OnClickButtonSearch(View view){
 
         EditText editTextSearch = findViewById(R.id.editTextSearch);
         String nombreRestauranteBuscado = editTextSearch.getText().toString();
+        this.BusquedaPorNombre(nombreRestauranteBuscado);
+
+        ListView listView = findViewById(R.id.listViewRestaurantes);
+
+        ArrayAdapter<String> itemsAdapter =
+                new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1
+                        ,elements);
+        listView.setAdapter(itemsAdapter);
+
 
     }
 

@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MapPopUp"></activity>
+        <activity android:name=".ResultAdvancedSearch"></activity>
+        <activity android:name=".MapPopUp" />
         <activity android:name=".Rate" />
         <activity android:name=".Comments" />
         <activity android:name=".CheckSchedule" />

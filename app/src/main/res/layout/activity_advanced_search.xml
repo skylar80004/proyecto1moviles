@@ -29,24 +29,13 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="#111111"
+        android:onClick="OnClickButtonBusquedaCantidadEstrellas"
         android:text="Buscar por Cantidad de Estrellas"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerBusquedaEstrellas" />
-
-    <Spinner
-        android:id="@+id/spinnerBusquedaEstrellas"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPrecioBusqueda2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextCantidadEstrellas" />
 
     <Button
         android:id="@+id/buttonBusquedaTipoPrecio"
@@ -56,6 +45,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="#111111"
+        android:onClick="OnClickButtonBusquedaTipoPrecio"
         android:text="Buscar por Tipo de Precio"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,13 +54,12 @@
         app:layout_constraintTop_toBottomOf="@+id/spinnerBusquedaTipoPrecio" />
 
 
-
     <TextView
         android:id="@+id/textViewPrecioBusqueda2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Cantidad de estrellas:"
         android:textColor="#111111"
@@ -129,6 +118,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="#111111"
+        android:onClick="OnClickButtonBusquedaTipoComida"
         android:text="Buscar por Tipo de Comida"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -174,4 +164,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPrecioBusqueda" />
+
+    <EditText
+        android:id="@+id/editTextCantidadEstrellas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPrecioBusqueda2" />
+
 </android.support.constraint.ConstraintLayout>

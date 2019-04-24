@@ -23,7 +23,7 @@
     <string-array name="spinnerBusquedaTipoPrecio">
         <item>Bajo</item>
         <item>Medio</item>
-        <item>Barato</item>
+        <item>Alto</item>
     </string-array>
 
 
