@@ -1,0 +1,17 @@
+<h1>Edit Restaurant Detail</h1>
+
+<%= form_for @restaurant, :url =>{:action => "update", :id =>@restaurant} do |f| %>
+
+<p>Name: <%= f.text_field 'name' %></p>
+<p>Stars: <%= f.text_field  'stars' %></p>
+<p>Latitude: <%= f.text_field 'latitude' %></p>
+<p>Longitude: <%= f.text_field  'longitude' %></p>
+<p>Kind of food: <%= f.text_field  'kind_food' %></p>
+<p>Price: <%= f.collection_select :price_id, Price.all, :id, :description %></p>
+<p>Phone number: <%= f.text_field  'phone' %></p>
+<p>Website: <%= f.text_field  'website' %></p>
+
+<%= f.submit "Save changes" %>
+<% end %>
+
+<%= link_to 'Back', {:action => 'list' } %>

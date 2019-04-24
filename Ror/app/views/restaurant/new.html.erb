@@ -1,0 +1,32 @@
+<h1>Add new restaurant</h1>
+
+<%= form_tag :action => 'create' do %>
+
+<p><label for = "restaurant_name">Name</label>:
+<%= text_field 'restaurants', 'name' %></p>
+
+<p><label for = "restaurant_stars">Stars</label>:
+<%= text_field 'restaurants', 'stars' %></p>
+
+<p><label for = "restaurant_latitude">Latitude</label>:
+<%= text_field 'restaurants', 'latitude' %></p>
+
+<p><label for = "restaurant_longitude">Longitude</label>:
+<%= text_field 'restaurants', 'longitude' %></p>
+
+<p><label for = "restaurant_kind_food">Kind of food</label>:
+<%= text_field 'restaurants', 'kind_food' %></p>
+
+<p><label for = "restaurant_price_id">Price</label>:
+<%= collection_select(:restaurants, :price_id, @prices, :id, :description, prompt: true) %></p>
+
+<p><label for = "restaurant_phone">Phone number</label>:
+<%= text_field 'restaurants', 'phone' %></p>
+
+<p><label for = "restaurant_website">Website</label>:
+<%= text_field 'restaurants', 'website' %></p>
+
+<%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %>

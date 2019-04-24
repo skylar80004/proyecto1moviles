@@ -1,0 +1,10 @@
+<h1><%= @photo.restaurant.name + " photos " %></h1>
+
+<p>
+   <strong>Description: </strong> <%= @photo.description %><br />
+   <%= image_tag @photo.image if @photo.image.attached?%>
+</p>
+
+<hr />
+
+<%= link_to 'Back', {:action => 'list'} %>

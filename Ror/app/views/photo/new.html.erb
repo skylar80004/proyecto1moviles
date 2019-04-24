@@ -1,0 +1,17 @@
+<h1>Add new photo</h1>
+
+<%= form_tag :action => 'create' do %>
+
+<p><label for = "restaurant_name">Name</label>:
+<%= collection_select(:photos, :restaurant_id, @restaurants, :id, :name, prompt: true) %></p>
+
+<p><label for = "restaurant_description">Description</label>:
+<%= text_area 'photos', 'description' %></p>
+
+<p><label for = "restaurant_image">Image</label>:
+<%= file_field 'photos', 'image' %></p>
+
+<%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %>

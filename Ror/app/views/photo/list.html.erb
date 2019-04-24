@@ -1,0 +1,17 @@
+<% if @photos.blank? %>
+<p>There are not any photos currently in the system.</p>
+<% else %>
+<p>These are the current photos in our system</p>
+
+<ul id = "photos">
+   <% @photos.each do |photo| %>
+    <li>
+        <%= link_to photo.restaurant.name, {:action => "show", :id => photo.id} -%>
+        <b> <%= link_to "Delete", {:action => 'delete', :id => photo.id},
+            :confirm => "Are you sure you want to delete this photo?" %></b>
+    </li>
+   <% end %>
+</ul>
+
+<% end %>
+<p><%= link_to "Add new Photo", {:action => 'new' }%></p>

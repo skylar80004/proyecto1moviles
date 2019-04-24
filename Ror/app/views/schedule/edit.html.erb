@@ -1,0 +1,13 @@
+<h1>Edit Schedule Detail</h1>
+
+<%= form_for @schedule, :url =>{:action => "update", :id =>@schedule} do |f| %>
+
+<p>Name: <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %></p>
+<p>Day: <%= f.text_field  'day' %></p>
+<p>Opened at: <%= f.time_field 'start' %></p>
+<p>Closed at: <%= f.time_field  'end' %></p>
+
+<%= f.submit "Save changes" %>
+<% end %>
+
+<%= link_to 'Back', {:action => 'list' } %>

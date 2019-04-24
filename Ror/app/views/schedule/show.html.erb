@@ -1,0 +1,11 @@
+<h1><%= @schedule.restaurant.name + " Schedule " %></h1>
+
+<p>
+   <strong>Day: </strong> <%= @schedule.day %><br />
+   <strong>Opened at: </strong> <%= @schedule.start.strftime("%H : %M") %><br />
+   <strong>Closed at: </strong> <%= @schedule.end.strftime("%H : %M") %><br />
+</p>
+
+<hr />
+
+<%= link_to 'Back', {:action => 'list'} %>

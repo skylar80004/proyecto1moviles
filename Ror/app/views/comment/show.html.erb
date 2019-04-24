@@ -1,0 +1,9 @@
+<h1><%= @comment.restaurant.name + " comments " %></h1>
+
+<p>
+   <strong>Comment: </strong> <%= @comment.comment %><br />
+</p>
+
+<hr />
+
+<%= link_to 'Back', {:action => 'list'} %>

@@ -1,0 +1,14 @@
+<h1><%= @restaurant.name %></h1>
+
+<p>
+   <strong>Name: </strong> <%= @restaurant.name %><br />
+   <strong>Stars:</strong> <%= @restaurant.stars %><br />
+   <strong>Kind of food:</strong> <%= @restaurant.kind_food %><br />
+   <strong>Price:</strong> <%= @restaurant.price.description %><br />
+   <strong>Phone number:</strong> <%= @restaurant.phone %><br />
+   <strong>Website:</strong> <%= @restaurant.website %><br />
+</p>
+
+<hr />
+
+<%= link_to 'Back', {:action => 'list'} %>

@@ -1,0 +1,14 @@
+<h1>Add new comment</h1>
+
+<%= form_tag :action => 'create' do %>
+
+<p><label for = "restaurant_name">Name</label>:
+<%= collection_select(:comments, :restaurant_id, @restaurants, :id, :name, prompt: true) %></p>
+
+<p><label for = "restaurant_comment">Comment</label>:
+<%= text_area 'comments', 'comment' %></p>
+
+<%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %>

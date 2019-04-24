@@ -1,0 +1,20 @@
+<h1>Add new schedule</h1>
+
+<%= form_tag :action => 'create' do %>
+
+<p><label for = "restaurant_name">Name</label>:
+<%= collection_select(:schedules, :restaurant_id, @restaurants, :id, :name, prompt: true) %></p>
+
+<p><label for = "restaurant_day">Day</label>:
+<%= text_field 'schedules', 'day' %></p>
+
+<p><label for = "restaurant_start">Opened at</label>:
+<%= time_field 'schedules', 'start' %></p>
+
+<p><label for = "restaurant_end">Closed at</label>:
+<%= time_field 'schedules', 'end' %></p>
+
+<%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %>

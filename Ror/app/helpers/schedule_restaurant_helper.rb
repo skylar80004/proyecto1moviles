@@ -1,0 +1,2 @@
+module ScheduleRestaurantHelper
+end
