@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,28 +24,36 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 
-public class AddRestaurantNext extends AppCompatActivity {
+public class AddRestaurantNext extends AppCompatActivity implements OnSuccessListener<UploadTask.TaskSnapshot>, OnFailureListener {
 
 
 
     private int GALLERY_REQUEST = 100;
     private int LOGO_REQUEST = 105;
     private StorageReference mStorageRef;
+    private StorageReference ref;
     private String nameRest;
+    private String imageURL;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_restaurant_next);
+        this.imageURL = "";
         this.nameRest = "";
         Intent intent = getIntent();
         this.nameRest = intent.getStringExtra("name");
-        FirebaseApp.initializeApp(this);
-        mStorageRef = FirebaseStorage.getInstance().getReference();
+        //FirebaseApp.initializeApp(this);
+        this.mStorageRef = FirebaseStorage.getInstance().getReference();
     }
 
 
@@ -65,50 +74,6 @@ public class AddRestaurantNext extends AppCompatActivity {
         photoPickerIntent.setType("image/*");
         startActivityForResult(photoPickerIntent, GALLERY_REQUEST);
 
-    }
-
-    public void UploadImageToFireBase(String name,Bitmap bitmap){
-
-        final StorageReference mountaisRef = this.mStorageRef.child("name");
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,100,baos);
-        byte[] data = baos.toByteArray();
-        UploadTask uploadTask = mountaisRef.putBytes(data);
-
-        Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-            @Override
-            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                if (!task.isSuccessful()) {
-                    throw task.getException();
-                }
-
-                // Continue with the task to get the download URL
-                return mountaisRef.getDownloadUrl();
-            }
-        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-            @Override
-            public void onComplete(@NonNull Task<Uri> task) {
-                if (task.isSuccessful()) {
-                    Uri downloadUri = task.getResult();
-                    Log.i("CHES","SE SUBIO LA IMAGEN Y SE OVTUBO EL LINK");
-                } else {
-                    // Handle failures
-                    // ...
-                }
-            }
-        });
-
-        uploadTask.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-
-            }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
-            }
-        });
     }
 
 
@@ -142,7 +107,19 @@ public class AddRestaurantNext extends AppCompatActivity {
                     LinearLayout linearLayout = findViewById(R.id.layoutHorizontalScroll);
                     linearLayout.addView(imageView);
 
-                    this.UploadImageToFireBase(selectedImage.getPath(),bitmap);
+
+
+                    // Se sube la imagen a fireBase
+
+                    if(selectedImage != null){
+
+                        this.ref = this.mStorageRef.child(selectedImage.toString());
+                        ref.putFile(selectedImage)
+                                .addOnSuccessListener(this)
+                                .addOnFailureListener(this);
+                    }
+
+                    //this.UploadImageToFireBase(selectedImage.getPath(),bitmap);
 
 
                 } catch (IOException e) {
@@ -173,6 +150,81 @@ public class AddRestaurantNext extends AppCompatActivity {
 
             }
         }
+
+    }
+
+    @Override
+    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+       // Toast toast = Toast.makeText(getApplicationContext(), "Se subio a storage", Toast.LENGTH_LONG);
+       // toast.show();
+
+        this.ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                // getting image uri and converting into string
+                Uri downloadUrl = uri;
+                imageURL = downloadUrl.toString();
+
+                // Post a la tabla de fotos
+
+                JSONObject params = new JSONObject();
+                String tipo = "GET";
+
+                nameRest.replace(" ", "%20");
+                String dir = "https://proyecto1moviles.herokuapp.com/restaurants.json?search=%22" + nameRest + "%22";
+
+                Conexion conexion;
+                conexion = new Conexion();
+
+                try {
+                    String resultado = conexion.execute(dir,tipo,params.toString()).get();
+                    JSONArray registros= new JSONArray(resultado);
+
+                    for(int i = 0 ; i < registros.length();i++){
+                        String valor = registros.getString(i);
+                        JSONObject registro = new JSONObject(valor);
+                        int idRest = registro.getInt("id");
+
+
+                        // Post tabla de fotos
+
+                        JSONObject params2 = new JSONObject();
+                        String tipo2 = "POST";
+                        String dir2 = "https://proyecto1moviles.herokuapp.com/photo_restaurants.json";
+
+                        params2.put("image_url", imageURL);
+                        params2.put("restaurant_id", idRest);
+
+                        Conexion conexion2;
+                        conexion2 = new Conexion();
+                        String resultado2 = conexion2.execute(dir2,tipo2,params2.toString()).get();
+                        if(resultado2.equals("Created")){
+                            Toast.makeText(getApplicationContext(),"Foto Agregada",Toast.LENGTH_LONG).show();
+
+
+                        }
+
+
+
+                    }
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onFailure(@NonNull Exception e) {
 
     }
 }

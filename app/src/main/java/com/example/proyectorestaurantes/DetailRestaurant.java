@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -34,9 +36,13 @@ import org.w3c.dom.Comment;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.ExecutionException;
 
-public class DetailRestaurant extends AppCompatActivity {
+public class DetailRestaurant extends AppCompatActivity implements OnSuccessListener<UploadTask.TaskSnapshot>, OnFailureListener {
 
 
     int LOGO_REQUEST = 100;
@@ -49,13 +55,15 @@ public class DetailRestaurant extends AppCompatActivity {
     String tipoPrecio = "";
 
     int idRest = 2;
+    private StorageReference mStorageRef;
+    private StorageReference ref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_restaurant);
 
-        //mStorageRef = FirebaseStorage.getInstance().getReference();
+        this.mStorageRef = FirebaseStorage.getInstance().getReference();
 
         Intent intent = getIntent();
         String nombreRestaurante = intent.getStringExtra("nombreRestaurante");
@@ -69,6 +77,7 @@ public class DetailRestaurant extends AppCompatActivity {
         try {
             this.ConsultarDatosRest(nombreRestaurante);
             this.MostrarConsulta();
+
 
         } catch (ExecutionException e) {
             e.printStackTrace();
@@ -101,6 +110,50 @@ public class DetailRestaurant extends AppCompatActivity {
 
 
     }
+
+
+    public void ConsultarFotos(int idRest){
+
+        JSONObject params = new JSONObject();
+        String tipo = "GET";
+        String dir = "https://proyecto1moviles.herokuapp.com/photo_restaurants.json";
+
+        Conexion conexion;
+        conexion = new Conexion();
+
+        try {
+            String resultado = conexion.execute(dir,tipo,params.toString()).get();
+            JSONArray registros = new JSONArray(resultado);
+            for(int i = 0; i < registros.length();i++){
+                String valor = registros.getString(i);
+                JSONObject registro = new JSONObject(valor);
+
+                int idRestConsultado = registro.getInt("restaurant_id");
+
+                if(idRestConsultado == idRest){
+
+                    String imageURL = registro.getString("image_url");
+
+                    ImageDownloader imageDownloader = new ImageDownloader();
+                    Bitmap bitmap = imageDownloader.execute(imageURL).get();
+                    ImageView imageView =  new ImageView(this);
+                    imageView.setImageBitmap(bitmap);
+
+                    LinearLayout ln = findViewById(R.id.linearLayoutDetailPhotos);
+                    ln.addView(imageView);
+
+                }
+            }
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+    }
     public void ConsultarDatosRest(String nameRest) throws ExecutionException, InterruptedException, JSONException {
 
         JSONObject params = new JSONObject();
@@ -128,10 +181,8 @@ public class DetailRestaurant extends AppCompatActivity {
         this.tipoPrecio = registro.getString("price_type");
         this.idRest = registro.getInt("id");
 
-        Log.i("CHES",this.nombreRest);
-        Log.i("CHES",this.website);
-        Log.i("CHES",this.telefono);
-        Log.i("CHES",String.valueOf(this.idRest));
+
+        this.ConsultarFotos(idRest);
 
 
     }
@@ -237,6 +288,17 @@ public class DetailRestaurant extends AppCompatActivity {
                     linearLayout.addView(imageView);
 
 
+                    // Subir foto
+
+                    if(selectedImage != null){
+
+                        this.ref = this.mStorageRef.child(selectedImage.toString());
+                        ref.putFile(selectedImage)
+                                .addOnSuccessListener(this)
+                                .addOnFailureListener(this);
+                    }
+
+
                 } catch (IOException e) {
                     Log.i("TAG", "Some exception " + e);
                 }
@@ -285,5 +347,76 @@ public class DetailRestaurant extends AppCompatActivity {
         Intent intent = new Intent(this, Comments.class);
         intent.putExtra("id", this.idRest);
         startActivity(intent);
+    }
+
+    @Override
+    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+        this.ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                // getting image uri and converting into string
+                Uri downloadUrl = uri;
+                String imageURL = downloadUrl.toString();
+
+                JSONObject params2 = new JSONObject();
+                String tipo2 = "POST";
+                String dir2 = "https://proyecto1moviles.herokuapp.com/photo_restaurants.json";
+
+                try {
+                    params2.put("image_url", imageURL);
+                    params2.put("restaurant_id", idRest);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                Conexion conexion2;
+                conexion2 = new Conexion();
+                try {
+                    String resultado2 = conexion2.execute(dir2, tipo2, params2.toString()).get();
+                    if (resultado2.equals("Created")) {
+                        Toast.makeText(getApplicationContext(), "Foto Agregada", Toast.LENGTH_LONG).show();
+
+                    }
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
+    }
+
+    @Override
+    public void onFailure(@NonNull Exception e) {
+
+    }
+
+    public class ImageDownloader extends AsyncTask<String,Void, Bitmap> {
+        @Override
+        protected Bitmap doInBackground(String... urls) {
+
+            try {
+
+                URL url = new URL(urls[0]);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.connect();
+                InputStream inputStream = connection.getInputStream();
+                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                return bitmap;
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            return null;
+        }
+
+
     }
 }

@@ -194,10 +194,10 @@ public class AddRestaurant extends AppCompatActivity {
         String resultado = conexion2.execute(dir3, tipo3,params.toString()).get();
 
         if(resultado.equals("Created")){
-            Toast.makeText(getApplicationContext(),"Dia " + day + " listo",Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),"Dia " + day + " listo",Toast.LENGTH_LONG).show();
         }
         else{
-            Toast.makeText(getApplicationContext(),"Dia " + day + " error",Toast.LENGTH_LONG).show();
+           // Toast.makeText(getApplicationContext(),"Dia " + day + " error",Toast.LENGTH_LONG).show();
         }
 
     }
