@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lv\\values-lv.xml",
+            "outputFile": "D:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1Nuevo\\proyecto1moviles\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lv\\values-lv.xml",
             "map": [
                 {
                     "source": "C:\\Users\\josev\\.gradle\\caches\\transforms-2\\files-2.1\\09ed4758edb2259541198ad215911cc4\\res\\values-lv\\values.xml",

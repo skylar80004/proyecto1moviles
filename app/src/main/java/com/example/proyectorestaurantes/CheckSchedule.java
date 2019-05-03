@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,9 +45,14 @@ public class CheckSchedule extends AppCompatActivity {
 
     public void ConsultarHorario() throws JSONException, ExecutionException, InterruptedException {
 
+
+        Toast toast = Toast.makeText(getApplicationContext(), "Id: " + this.idRest,Toast.LENGTH_LONG);
+        toast.show();
+
         JSONObject params = new JSONObject();
         String tipo = "GET";
         String dir = "https://proyecto1moviles.herokuapp.com/schedules.json";
+
         params.put("restaurant_id", this.idRest);
 
         Conexion conexion;
@@ -64,10 +70,6 @@ public class CheckSchedule extends AppCompatActivity {
             String dia = registro.getString("day");
             String abre = registro.getString("start");
             String cierra = registro.getString("end");
-
-            Log.i("CHES",dia);
-            Log.i("CHES",abre);
-            Log.i("CHES",cierra);
 
 
             if(dia.equals("Lunes")){

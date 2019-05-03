@@ -29,17 +29,24 @@ public class MenuMapsActivity extends FragmentActivity implements OnMapReadyCall
     private double longi;
     private boolean mLocationPermissionGranted;
     private int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION;
-
+    private String action;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_maps);
+
+        this.action = "";
+        Intent intent = getIntent();
+        this.action = intent.getStringExtra("all");
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         lat = 0;
         longi = 0;
+
+
     }
 
 
@@ -70,7 +77,7 @@ public class MenuMapsActivity extends FragmentActivity implements OnMapReadyCall
         mMap.addMarker(new MarkerOptions().position(costaRica).title("Marker in Costa Rica"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(costaRica));
 
-       // mMap.set
+
     }
 
 

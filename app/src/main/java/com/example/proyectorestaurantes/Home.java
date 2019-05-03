@@ -185,6 +185,7 @@ public class Home extends AppCompatActivity
     public void OnClickButtonSeeMap(View view){
 
         Intent intent = new Intent(this, MenuMapsActivity.class);
+        intent.putExtra("all", "all");
         startActivity(intent);
 
     }
