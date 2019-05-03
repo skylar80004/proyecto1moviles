@@ -1,4 +1,4 @@
-#Thu May 02 21:09:59 CST 2019
+#Thu May 02 23:03:54 CST 2019
 base.0=D\:\\Tec\\ISemestre2019\\DesarrollodeAplicacionesMoviles\\Proyectos\\proyecto1\\proyecto1moviles\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 path.0=classes.dex
 renamed.0=classes.dex

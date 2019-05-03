@@ -49,7 +49,7 @@ public class MenuMapsActivity extends FragmentActivity implements OnMapReadyCall
         this.nameRest = "";
         Intent intent = getIntent();
         this.action = intent.getStringExtra("action");
-        if(this.action.equals("addLocation")){
+        if(this.action.equals("addLocation") || this.action.equals("singleLocation")){
             this.nameRest = intent.getStringExtra("name");
         }
 
@@ -155,17 +155,42 @@ public class MenuMapsActivity extends FragmentActivity implements OnMapReadyCall
 
 
         }
+        else if(this.action.equals("singleLocation")){
 
-        /*
-        // Add a marker in Sydney and move the camera
-        LatLng costaRica = new LatLng(this.lat, this.longi);
-        mMap.addMarker(new MarkerOptions().position(costaRica).title("Marker in Costa Rica"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(costaRica));
-        */
+            JSONObject params = new JSONObject();
+            String tipo = "GET";
+            String fixedName = this.nameRest.replace(" ", "%20");
+            String dir = "https://proyecto1moviles.herokuapp.com/restaurants.json?search=%22" + fixedName + "%22";
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Mapas listos" , Toast.LENGTH_LONG);
-        toast.show();
-       // mMap.set
+            Conexion conexion;
+            conexion = new Conexion();
+            try {
+                String resultado = conexion.execute(dir, tipo, params.toString()).get();
+                JSONArray registros = new JSONArray(resultado);
+
+                for(int i = 0; i < registros.length();i++){
+                    String valor = registros.getString(i);
+                    JSONObject registro = new JSONObject(valor);
+
+                    double lat = registro.getDouble("latitude");
+                    double longi = registro.getDouble("longitude");
+                    LatLng place = new LatLng(lat,longi);
+
+                    mMap.addMarker(new MarkerOptions().position(place).title(this.nameRest));
+
+
+                }
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+
     }
 
 

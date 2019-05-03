@@ -252,6 +252,8 @@ public class DetailRestaurant extends AppCompatActivity {
     public void OnClickButtonLocation(View view){
 
         Intent intent = new Intent(this, MenuMapsActivity.class);
+        intent.putExtra("name",this.nombreRest);
+        intent.putExtra("action", "singleLocation");
         startActivity(intent);
 
         // Se le debe pasar la informacion de la ubicacion del restaurante actual para mostrarla

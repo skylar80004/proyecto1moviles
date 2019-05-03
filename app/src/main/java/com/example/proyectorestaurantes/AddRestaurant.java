@@ -314,21 +314,6 @@ public class AddRestaurant extends AppCompatActivity {
                 this.UploadSchedule("Domingo",abreDomingo,cierraDomingo,id);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
 
 
