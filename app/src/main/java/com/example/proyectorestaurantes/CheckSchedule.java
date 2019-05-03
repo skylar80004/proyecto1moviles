@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,7 +25,7 @@ public class CheckSchedule extends AppCompatActivity {
         Intent intent = getIntent();
         idRest = intent.getIntExtra("id", 1);
 
-        Log.i("CHES", String.valueOf(idRest));
+        //Log.i("CHES", String.valueOf(idRest));
 
         try {
 
@@ -47,7 +48,9 @@ public class CheckSchedule extends AppCompatActivity {
         JSONObject params = new JSONObject();
         String tipo = "GET";
         String dir = "https://proyecto1moviles.herokuapp.com/schedules.json";
-        params.put("restaurant_id", this.idRest);
+
+        Toast toast = Toast.makeText(getApplicationContext(), String.valueOf(this.idRest), Toast.LENGTH_LONG);
+        toast.show();
 
         Conexion conexion;
         conexion = new Conexion();
@@ -64,13 +67,14 @@ public class CheckSchedule extends AppCompatActivity {
             String dia = registro.getString("day");
             String abre = registro.getString("start");
             String cierra = registro.getString("end");
+            int idObtenido = registro.getInt("restaurant_id");
 
             Log.i("CHES",dia);
             Log.i("CHES",abre);
             Log.i("CHES",cierra);
 
 
-            if(dia.equals("Lunes")){
+            if( idRest == idObtenido && dia.equals("Lunes")){
 
 
                 EditText editTextAbre = findViewById(R.id.editTextLunesAbre2);
@@ -79,7 +83,7 @@ public class CheckSchedule extends AppCompatActivity {
                 editTextCierra.setText(cierra);
 
             }
-            else if (dia.equals("Martes")){
+            else if (idRest == idObtenido &&  dia.equals("Martes")){
 
 
                 EditText editTextAbre = findViewById(R.id.editTextMartesAbre2);
@@ -88,7 +92,7 @@ public class CheckSchedule extends AppCompatActivity {
                 editTextCierra.setText(cierra);
 
             }
-            else if(dia.equals("Miercoles")){
+            else if(idRest == idObtenido && dia.equals("Miercoles")){
 
                 EditText editTextAbre = findViewById(R.id.editTextMiercolesbre2);
                 EditText editTextCierra  = findViewById(R.id.editTextMiercolesCierra2);
@@ -96,7 +100,7 @@ public class CheckSchedule extends AppCompatActivity {
                 editTextCierra.setText(cierra);
 
             }
-            else if(dia.equals("Jueves")){
+            else if(idRest == idObtenido && dia.equals("Jueves")){
 
                 EditText editTextAbre = findViewById(R.id.editTextJuevesAbre2);
                 EditText editTextCierra  = findViewById(R.id.editTextJuevesCierra2);
@@ -104,7 +108,7 @@ public class CheckSchedule extends AppCompatActivity {
                 editTextCierra.setText(cierra);
 
             }
-            else if(dia.equals("Viernes")){
+            else if(idRest == idObtenido && dia.equals("Viernes")){
 
                 EditText editTextAbre = findViewById(R.id.editTextViernesAbre2);
                 EditText editTextCierra  = findViewById(R.id.editTextViernesCierra2);
@@ -113,7 +117,7 @@ public class CheckSchedule extends AppCompatActivity {
 
 
             }
-            else if(dia.equals("Sabado")){
+            else if(idRest == idObtenido && dia.equals("Sabado")){
 
                 EditText editTextAbre = findViewById(R.id.editTextSabadoAbre2);
                 EditText editTextCierra  = findViewById(R.id.editTextSabadoCierra2);
@@ -122,7 +126,7 @@ public class CheckSchedule extends AppCompatActivity {
 
 
             }
-            else if(dia.equals("Domingo")){
+            else if(idRest == idObtenido && dia.equals("Domingo")){
 
                 EditText editTextAbre = findViewById(R.id.editTextDomingoAbre2);
                 EditText editTextCierra  = findViewById(R.id.editTextDomingoCierra2);

@@ -23,6 +23,7 @@ public class MapPopUp extends AppCompatActivity {
     public void OnClickButtonVerDetalle(View view){
 
         Intent intent = new Intent(this,DetailRestaurant.class);
+        intent.putExtra("nombreRestaurante",nombreRestaurante);
         startActivity(intent);
     }
 }

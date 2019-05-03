@@ -33,12 +33,16 @@ public class AddRestaurantNext extends AppCompatActivity {
     private int GALLERY_REQUEST = 100;
     private int LOGO_REQUEST = 105;
     private StorageReference mStorageRef;
+    private String nameRest;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_restaurant_next);
+        this.nameRest = "";
+        Intent intent = getIntent();
+        this.nameRest = intent.getStringExtra("name");
         FirebaseApp.initializeApp(this);
         mStorageRef = FirebaseStorage.getInstance().getReference();
     }
@@ -46,6 +50,15 @@ public class AddRestaurantNext extends AppCompatActivity {
 
 
 
+
+    public void OnClickButtonAgregarUbicacion(View view){
+
+        Intent intent = new Intent(this,MenuMapsActivity.class);
+        intent.putExtra("action", "addLocation");
+        intent.putExtra("name",this.nameRest);
+        startActivity(intent);
+
+    }
     public void OnClickButtonAgregarImagen(View view){
 
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);

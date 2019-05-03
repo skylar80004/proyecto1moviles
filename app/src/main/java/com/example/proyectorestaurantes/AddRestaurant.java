@@ -171,12 +171,36 @@ public class AddRestaurant extends AppCompatActivity {
         Toast toast = Toast.makeText(this, "Se agrego el restaurante", Toast.LENGTH_LONG);
         toast.show();
         Intent intent = new Intent(this,AddRestaurantNext.class);
+        intent.putExtra("name", nombreRest);
         startActivity(intent);
 
     }
 
 
 
+    public void UploadSchedule(String day, String start, String end,int id) throws JSONException, ExecutionException, InterruptedException {
+
+        JSONObject params = new JSONObject();
+        String tipo3 = "POST";
+        String dir3 = "https://proyecto1moviles.herokuapp.com/schedules.json";
+
+        params.put("day", day);
+        params.put("start", start);
+        params.put("end", end);
+        params.put("restaurant_id", id);
+
+        Conexion conexion2;
+        conexion2 = new Conexion();
+        String resultado = conexion2.execute(dir3, tipo3,params.toString()).get();
+
+        if(resultado.equals("Created")){
+            Toast.makeText(getApplicationContext(),"Dia " + day + " listo",Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"Dia " + day + " error",Toast.LENGTH_LONG).show();
+        }
+
+    }
     public void UploadRest(String nameRest, double lat, double longi, String foodType, String phone, String webSite, String priceType) {
 
         JSONObject jsonParam = new JSONObject();
@@ -227,20 +251,7 @@ public class AddRestaurant extends AppCompatActivity {
                 String abre = edLunesAbre.getText().toString();
                 String cierra = edLunesCierra.getText().toString();
 
-
-                JSONObject params = new JSONObject();
-                String tipo3 = "POST";
-                String dir3 = "https://proyecto1moviles.herokuapp.com/schedules.json";
-
-                params.put("day", "Lunes");
-                params.put("start", abre);
-                params.put("end", cierra);
-                params.put("restaurant_id", id);
-
-                Conexion conexion2;
-                conexion2 = new Conexion();
-                conexion2.execute(dir3, tipo3,params.toString()).get();
-
+                this.UploadSchedule("Lunes",abre,cierra,id);
 
                 //Martes
 
@@ -249,18 +260,7 @@ public class AddRestaurant extends AppCompatActivity {
                 String abreMartes = edMartesAbre.getText().toString();
                 String cierraMartes = edMartesCierra.getText().toString();
 
-                JSONObject params4 = new JSONObject();
-                String tipo4 = "POST";
-                String dir4 = "https://proyecto1moviles.herokuapp.com/schedules.json";
-
-                params.put("day", "Martes");
-                params.put("start", abreMartes);
-                params.put("end", cierraMartes);
-                params.put("restaurant_id", id);
-
-                Conexion conexion3;
-                conexion3 = new Conexion();
-                conexion3.execute(dir4, tipo4,params4.toString()).get();
+                this.UploadSchedule("Martes",abreMartes,cierraMartes,id);
 
                 //Miercoles
 
@@ -269,18 +269,8 @@ public class AddRestaurant extends AppCompatActivity {
                 String abreMiercoles = edMiercolesAbre.getText().toString();
                 String cierraMiercoles = edMiercolesCierra.getText().toString();
 
-                JSONObject params5 = new JSONObject();
-                String tipo5 = "POST";
-                String dir5 = "https://proyecto1moviles.herokuapp.com/schedules.json";
+                this.UploadSchedule("Miercoles",abreMiercoles,cierraMiercoles,id);
 
-                params.put("day", "Miercoles");
-                params.put("start", abreMiercoles);
-                params.put("end", cierraMiercoles);
-                params.put("restaurant_id", id);
-
-                Conexion conexion5;
-                conexion5= new Conexion();
-                conexion5.execute(dir5, tipo5,params5.toString()).get();
 
                 //Jueves
 
@@ -289,18 +279,9 @@ public class AddRestaurant extends AppCompatActivity {
                 String abreJueves = edJuevesAbre.getText().toString();
                 String cierraJueves = edJuevesCierra.getText().toString();
 
-                JSONObject params6 = new JSONObject();
-                String tipo6 = "POST";
-                String dir6 = "https://proyecto1moviles.herokuapp.com/schedules.json";
+                this.UploadSchedule("Jueves",abreJueves,cierraJueves,id);
 
-                params.put("day", "Jueves");
-                params.put("start", abreJueves);
-                params.put("end", cierraJueves);
-                params.put("restaurant_id", id);
 
-                Conexion conexion6;
-                conexion6= new Conexion();
-                conexion6.execute(dir6, tipo6,params6.toString()).get();
 
                 //Viernes
 
@@ -309,18 +290,8 @@ public class AddRestaurant extends AppCompatActivity {
                 String abreViernes = edViernesAbre.getText().toString();
                 String cierraViernes = edViernesCierra.getText().toString();
 
-                JSONObject params7 = new JSONObject();
-                String tipo7 = "POST";
-                String dir7 = "https://proyecto1moviles.herokuapp.com/schedules.json";
+                this.UploadSchedule("Viernes",abreViernes,cierraViernes,id);
 
-                params.put("day", "Viernes");
-                params.put("start", abreViernes);
-                params.put("end", cierraViernes);
-                params.put("restaurant_id", id);
-
-                Conexion conexion7;
-                conexion7= new Conexion();
-                conexion7.execute(dir7, tipo7,params7.toString()).get();
 
                 //Sabado
 
@@ -329,18 +300,9 @@ public class AddRestaurant extends AppCompatActivity {
                 String abreSabado = edSabadoAbre.getText().toString();
                 String cierraSabado = edSabadoCierra.getText().toString();
 
-                JSONObject params8 = new JSONObject();
-                String tipo8 = "POST";
-                String dir8 = "https://proyecto1moviles.herokuapp.com/schedules.json";
+                this.UploadSchedule("Sabado",abreSabado,cierraSabado,id);
 
-                params.put("day", "Sabado");
-                params.put("start", abreSabado);
-                params.put("end", cierraSabado);
-                params.put("restaurant_id", id);
 
-                Conexion conexion8;
-                conexion8= new Conexion();
-                conexion8.execute(dir8, tipo8,params8.toString()).get();
 
                 //Domingo
 
@@ -349,18 +311,10 @@ public class AddRestaurant extends AppCompatActivity {
                 String abreDomingo = edDomingoAbre.getText().toString();
                 String cierraDomingo = edDomingoCierra.getText().toString();
 
-                JSONObject params9 = new JSONObject();
-                String tipo9 = "POST";
-                String dir9 = "https://proyecto1moviles.herokuapp.com/schedules.json";
+                this.UploadSchedule("Domingo",abreDomingo,cierraDomingo,id);
 
-                params.put("day", "Domingo");
-                params.put("start", abreDomingo);
-                params.put("end", cierraDomingo);
-                params.put("restaurant_id", id);
 
-                Conexion conexion9;
-                conexion9= new Conexion();
-                conexion9.execute(dir9, tipo9,params9.toString()).get();
+
 
 
 

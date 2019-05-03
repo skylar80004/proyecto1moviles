@@ -62,7 +62,6 @@ public class Home extends AppCompatActivity
         listView.setAdapter(itemsAdapter);
 
 
-
     }
 
     @Override
@@ -185,6 +184,7 @@ public class Home extends AppCompatActivity
     public void OnClickButtonSeeMap(View view){
 
         Intent intent = new Intent(this, MenuMapsActivity.class);
+        intent.putExtra("action","all");
         startActivity(intent);
 
     }

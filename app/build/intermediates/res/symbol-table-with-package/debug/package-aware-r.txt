@@ -1452,6 +1452,7 @@ id bottom
 id box_count
 id button
 id button2
+id buttonAddLocation
 id buttonAddPhoto
 id buttonAgregarFinalizar
 id buttonAgregarImagen
